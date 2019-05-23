@@ -1,0 +1,25 @@
+.profiel {
+    width: 700px;
+    height: 460px;
+    margin: 10px;
+    background-image: url(../img/urban.jpg);
+    background-size: 700px;
+}
+
+body{font-family: 'Source Code Pro'; background-color: rgb(230,230,230);}
+
+h1{font-size: 2em; color:#0099cc;}
+
+body{margin-left: 10%;}
+
+.intro{margin-bottom: 5%;}
+.opdrachten {margin-bottom: 3%;}
+
+ul{margin-bottom: 5%;}
+
+ul li {
+    list-style-type: disc;
+    margin-left: 10%;
+}
+
+.github{margin-bottom: 5%;}

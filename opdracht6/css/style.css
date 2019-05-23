@@ -1,0 +1,111 @@
+body{font-family: 'Source Code Pro';}
+
+header {
+    height: 60px;
+    background-color: rgb(255, 200, 200);
+    margin-bottom: 3em;
+}
+
+li {
+    float: left;
+    padding-top: 20px;
+    margin-left: 15%;
+}
+
+ul {
+    font-size: 1em;
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    max-width: 984px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 3em;
+    color: #000;
+}
+
+footer {
+    background-color: rgb(255, 200, 200);
+    margin-top: 20px;
+}
+
+footer p {
+    padding: 1em 1em;
+}
+
+article header {
+    background: none;
+}
+
+.foto {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    float: left;
+}
+
+.tonato {
+    background-image: url(../img/tonnato@2x.jpg);
+    background-size: 300px;
+}
+
+.bolognese {
+    background-image: url(../img/bolognese@2x.jpg);
+    background-size: 300px;
+}
+
+.tiramisu {
+    background-image: url(../img/tiramisu@2x.jpg);
+    background-size: 300px;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        background-color: grey;
+    }
+    ul {
+        font-size: 1em;
+    }
+    li {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width:840px) {
+    .foto {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 1em;
+        background-size: 200px;
+    }
+}
+
+#accordion {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.ui-accordion-header {
+    color: grey;
+}
+
+#accoBtn {
+    background-color: green;
+    padding: 1em;
+    cursor: pointer;
+}
+
+h3 {
+    cursor: pointer;
+}

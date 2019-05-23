@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>opdracht6</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flipclock.css">
+    <link rel="stylesheet" type="text/css" href="gridtab/gridtab/gridtab.min.css" />
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/flipclock.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="gridtab/gridtab/gridtab.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="#" id="colorTitle">Maak de titel blauw</a></li>
+                <li> <a href="#" id="font">Verander het lettertype</a></li>
+                <li> <a href="#" id="colorText">Verander de tekstkleur</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <header>
+
+            <h2> Italiaans restaurant </h2>
+
+        </header>
+
+        <article class="clear">
+
+            <dl id="gridtab-1">
+                <dt>Voorgerecht</dt>
+                <dd>Vitello tonato </dd>
+                <dt>Hoofdgerecht</dt>
+                <dd>Spaghetti bolognese</dd>
+                <dt>Dessert</dt>
+                <dd>Tiramisu</dd>
+            </dl>
+
+            <a id="accoBtn" class="active">Aan</a>
+            <div id="accordion">
+
+                <h3>Vitello tonato</h3>
+                <div>
+                    <p>Vitello tonnato is een Piemontees gerecht van koud, gesneden kalfsvlees bedekt met een romige,
+                        mayonaise-achtige saus die is gearomatiseerd met tonijn.</p>
+                </div>
+
+                <h3>Spaghetti bolognese</h3>
+                <div>
+                    <p>Bolognesesaus is een traditionele Italiaanse pastasaus, afkomstig uit Bologna. Bologna staat
+                        bekend om zijn zeer voedzame keuken en de saus is dan ook, in tegenstelling tot de meeste andere
+                        pastasauzen, behoorlijk gevuld.</p>
+                </div>
+
+                <h3>Tiramisu</h3>
+                <div>
+                    <p>Tiramisu is een van oorsprong Italiaans dessert. De naam betekent letterlijk trek mij omhoog, wat
+                        zoveel inhoudt als beur mij op of maak mij blij. Tiramisu wordt dan ook vaak aan herstellende
+                        zieken gegeven, om ze aan te laten sterken en er weer bovenop te brengen.</p>
+                </div>
+            </div>
+
+            <div class="foto tonato"> </div>
+            <div class="foto bolognese"> </div>
+            <div class="foto tiramisu"> </div>
+
+
+        </article>
+
+        <div class="your-clock"></div>
+
+        <footer>
+            <p>Robin Losada</p>
+        </footer>
+    </main>
+
+    <script>
+        var titleColor = '#0099cc';
+        var fontType = "Fredericka the Great";
+        var textColor = '#990099'
+        $(document).ready(function () {
+
+            $('#colorTitle').click(function () {
+                $('h2').css({ 'color': titleColor });
+            });
+
+            $('#font').click(function () {
+                $('*').css({ 'font-family': fontType });
+            });
+
+            $('#colorText').click(function () {
+                $('article').css({ 'color': textColor });
+            });
+
+            $(function () {
+                $("#accordion").accordion({
+                    animate: 500, //snelheid openschruiven
+                    heightStyle: "content" //hoever de balk openschuift, content bepaalt hoe hoog
+                });
+            });
+
+            $('#accoBtn').click(function () {
+                if ($(this).hasClass('active')) {               //als class aanwezig is
+                    $(this).removeClass('active');              //verwijder de class
+                    $("#accordion").accordion("disable");
+                    $('#accoBtn').text("Uit");
+                    $("#accoBtn").css({ "background-color": "red" });
+                    console.log('accordion uit');
+                } else {                                        // anders
+                    $(this).addClass('active');                 //voeg de class toe
+                    $("#accordion").accordion("enable");
+                    $('#accoBtn').text("Aan");
+                    $("#accoBtn").css({ "background-color": "green" });
+                    console.log('accordion aan');
+                }
+            });
+
+            $('#gridtab-1').gridtab({
+                grid: 3
+            });
+
+            var clock = $('.your-clock').FlipClock({
+                // ... your options here
+            });
+
+        });
+    </script>
+</body>
+
+</html>
